@@ -12,7 +12,7 @@ public:
         int maxLen = 1;
         for (int i = 0; i < s.size(); i++){
             for(int j = i; j < s.size(); j++){
-                if ( isPalindromic(i,j,s) && (maxLen < j - i + 1) ){
+                if ( (maxLen < j - i + 1)  && isPalindromic(i,j,s) ){
                     longest.first = i;
                     longest.second = j;
                     maxLen = longest.second -longest.first + 1;
