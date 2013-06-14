@@ -1,4 +1,4 @@
-CPP
+Leetcode
 ===
 
 c++ programming practice
