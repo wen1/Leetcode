@@ -1,3 +1,4 @@
+#include <string>
 #include <vector>
 using namespace std;
 
@@ -10,14 +11,16 @@ public:
         // get number of char of each row
         vector<int> rowNum(nRows,0);
         for(int i = 0; i < s.size(); i++){
-            tempid = i % magic;
-            x = (tempid<nRows? tempid : magic-tempid);
-            rowNum[x]++;
+            int tempid = i % magic;
+            tempid = (tempid<nRows? tempid : magic-tempid);
+            rowNum[tempid]++;
         }
         
         for(int i =0; i<rowNum.size(); i++) cout << rowNum[i] << " ";
-        //
-        
+        cout << endl;
+////////////////////////////////////////////////////////////////////////
+        for(int i = 1; i<nRows; i++) rowNum[i] += rowNum[i-1];
+        for(int i =0; i<rowNum.size(); i++) cout << rowNum[i] << " ";
         
         return "ss";
     }
