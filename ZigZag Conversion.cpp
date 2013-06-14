@@ -1,16 +1,28 @@
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
     string convert(string s, int nRows) {
         // get the magic number from nRows
-        int magic = nRows+nRows-2;
+        int magic = nRows * 2 - 2 ;
+        string ss = s;
+        // get number of char of each row
+        vector<int> rowNum(nRows,0);
+        for(int i = 0; i < s.size(); i++){
+            tempid = i % magic;
+            x = (tempid<nRows? tempid : magic-tempid);
+            rowNum[x]++;
+        }
         
-        // get the number of char each row holds
-        int rowNum[nRows];  rowNum[nRows-1] = s.size()/nRows;
-        getRowNum( rowNum, nRows,s.size() );
+        for(int i =0; i<rowNum.size(); i++) cout << rowNum[i] << " ";
+        //
+        
         
         return "ss";
     }
-    void getRowNum(int* rowNum,int nRows, int len){
+};
+/*    void getRowNum(int* rowNum,int nRows, int len){
         int quotient = len / nRows;
         int remainder = len % nRows;
         
@@ -20,4 +32,4 @@ public:
             rowNum[i] = quotient + (i < remainder? quotient+1 : quotient) + (i);
         }
     }
-};
+*/
