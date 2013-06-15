@@ -15,7 +15,7 @@ public:
                 if ( (maxLen < j - i + 1)  && isPalindromic(i,j,s) ){
                     longest.first = i;
                     longest.second = j;
-                    maxLen = longest.second -longest.first + 1;
+                    maxLen = j -i + 1;
                 }            
             }
         }
