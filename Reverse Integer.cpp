@@ -31,7 +31,13 @@ public:
         return res;
     }
 };
-
+//////////////////////////////////////////////////////////////////////
+/* REMARK
+Did you notice that the reversed integer might overflow? 
+Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. 
+How should you handle such cases?
+*/
+//////////////////////////////////////////////////////////////////////
 // another version without using  STL
 class Solution {
 public:
