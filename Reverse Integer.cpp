@@ -31,3 +31,40 @@ public:
         return res;
     }
 };
+
+// another version without using  STL
+class Solution {
+public:
+    int reverse(int x) {
+        if (x == 0) return 0;
+        int sign = (x>0? 1 : -1);
+        int absVal = x / sign;
+        string  s = reverseStringFromInt(absVal);
+        int res = stringToInt(s);
+        return res * sign;
+    }
+    
+    // return a string of the given int reversed (without using sstream)
+    // ex: reverseStringFromInt(10) -> "1"
+    string reverseStringFromInt(int a){
+        int base = 10;
+        string s;
+        char digits[10] = {'0','1','2','3','4','5','6','7','8','9'};
+        while(a){
+            s.push_back(digits[a%10]);
+            a = a / base;
+        }
+        return s;
+    }
+    int stringToInt(string s){
+        int multiplier = 1;
+        int res = 0;
+        for(int i = s.size()-1; i>=0; i--){
+            s[i] -= '0';
+            res += s[i] * multiplier;
+            multiplier *= 10;
+        }
+        return res;
+    }
+
+};
